@@ -6,7 +6,6 @@ var fs = require('fs');
 
 var port = process.env.PORT || 8000;
 
-var connectionString = "postgres://antuser:password@localhost:5432/antDB";
 
 app.use(express.static(path.join(__dirname, 'public')));
 
