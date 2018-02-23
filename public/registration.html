@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BestCS Registration</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+  <style>
+  .box{
+      margin-top: 10px;}
+  .navbar{
+      margin-bottom:0;
+      border-radius:0;
+    }
+
+  .submitButton {
+      border-radius:10px;
+      display:block;
+      width: 140px;
+      text-align: center;
+      color:black;
+      float: left;
+      background-color: #D5F5E3;
+      margin-top: 8px;
+      height:28px;
+      
+      }
+    .cancelButton {
+      border-radius:10px;
+      display:block;
+      width: 100px;
+      text-align: center;
+      color:black;
+      float: left;
+      margin-left: 5px;
+      }
+  
+  .regCancelButton {
+      border-radius:5px;
+      margin-left: 10px;
+      width: 120px;
+      margin-left: 10px;
+      text-align: center;
+      color:black;
+      margin-top: 8px;
+      height:28px;
+
+    }
+  .regSubmitButton {
+      border-radius:5px;
+      width: 140px;
+      margin-left: 30px;
+      text-align: center;
+      color:black;
+      margin-top: 8px;
+      height:28px;
+      background-color: #D5F5E3;
+
+
+    }
+
+</style>
+
+  <nav class="navbar navbar-inverse right">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BestCS</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+
+              <li class="dropdown ">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a class="headerLinks"></a>
+                <a class="listLinks" href="" target="_top"> </a>  </li>
+                <li role="separator" class="divider"></li>
+                <li><a class="headerLinks">Phone: 317-555-1212 </a>
+                <a class="listLinks" href="" target="_top"></a></li>
+              </ul>
+            </li>
+            <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" target="_blank">On-Site Services</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" target="_blank">Off-Site Services</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" target="_blank">Home Care Services</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#" target="_blank">Shuttle Services</a></li>
+               
+                
+              </ul>
+            </li>
+            <li><a href="about.html">About BestCS</a></li>
+            <li id="home"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  <div class="jTron">
+    <div class=" jumbotron " id="jumbotron-display">
+      <div class="container text-center">
+        <h1>Registration</h1>
+        <p>Registering with BestCS gives you full access to all our services.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container" id="selectRegType">
+    <p>Are you registering as:</p>
+    <div class="checkbox" id="commDiv">
+  <label><input type="checkbox" id="comm" value="" class="checkbox_check">Community User</label>
+</div>
+<div class="checkbox" id="staffDiv">
+  <label><input type="checkbox"  id="staff" value="" class="checkbox_check">Staff Member</label>
+</div>
+<div class="checkbox " id="volDiv">
+  <label><input type="checkbox" id="vol" value="" class="checkbox_check">Volunteer</label>
+</div>
+<button href="#" class="btn btn-default submitButton" id="selectRegTypeBtn" >Submit</button>
+  </div>
+
+  
+  <div class="container" id="publicRegistration">
+    <p class="container" style="color:blue;">Public Registration</p>
+    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+      <div id="credentials" class="col-md-12">
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
+        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
+        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
+        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
+        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
+        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
+        <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
+        <!--<button id="registrationBtn" class="btn-default">Submit</button>-->
+      </div>
+    </form>
+  </div>
+
+
+  <!-- VOLUNTEER REGISTRATION FORM -->
+ 
+  <div class="container" id="volRegistration">
+    <p class="container" style="color:blue;">Volunteer Registration</p>
+    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+      <div id="credentials" class="col-md-12">
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
+        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
+        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
+        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
+        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
+        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
+        <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
+        <!--<button id="registrationBtn" class="btn-default">Submit</button>-->
+      </div>
+    </form>
+  </div>
+
+
+  
+  <div class="container" id="staffRegistration">
+    <p class="container" style="color:blue;">Employee Registration</p>
+    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+      <div id="credentials" class="col-md-12">
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
+        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
+        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
+        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
+        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
+        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
+        <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
+        <!--<button id="registrationBtn" class="btn-default">Submit</button>-->
+      </div>
+    </form>
+  </div>
+
+  <div class="container text-center" id="confirm">
+    <h3 >Thank you for registering!</h3>
+    <a href="/" class="btn btn-default regCancelButton" id="home" >Return</a>
+  </div>
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+
+    
+    $(document).ready(function(){
+
+    $("#selectRegType").show();
+    $("#publicRegistration").hide();
+    $("#volRegistration").hide();
+    $("#staffRegistration").hide();
+    $("#selectRegTypeBtn").hide();
+    $("#confirm").hide();
+
+
+    $('#comm').change(function(){ 
+      if(document.getElementById('comm').checked){
+        $("#staffDiv").hide();
+        $("#volDiv").hide();
+        $("#selectRegTypeBtn").show();
+      }
+      else{
+        $("#staffDiv").show();
+        $("#volDiv").show();
+        $("#selectRegTypeBtn").hide();
+      }
+      
+    });
+
+    $('#staff').change(function(){ 
+      if(document.getElementById('staff').checked){
+        $("#commDiv").hide();
+        $("#volDiv").hide();
+        $("#selectRegTypeBtn").show();
+      }
+      else{
+         $("#commDiv").show();
+        $("#volDiv").show();
+        $("#selectRegTypeBtn").hide();
+      }
+    });
+
+    $('#vol').change(function(){ 
+      if(document.getElementById('vol').checked){
+        $("#staffDiv").hide();
+        $("#commDiv").hide();
+        $("#selectRegTypeBtn").show();
+      }
+      else{
+        $("#staffDiv").show();
+        $("#commDiv").show();
+        $("#selectRegTypeBtn").hide();
+      }
+    });
+
+    $("#registrationBtn").click(function(){
+       $("#staffRegistration").hide();
+       $("#volRegistration").hide();
+       $("#publicRegistration").hide();
+       $("#confirm").show();
+    });
+
+
+    $("#selectRegTypeBtn").click(function(){
+        if(document.getElementById('comm').checked) {
+            $("#publicRegistration").show();
+            $("#selectRegType").hide();
+        } else if (document.getElementById('vol').checked){
+            $("#volRegistration").show();
+            $("#selectRegType").hide();
+            }
+        else if (document.getElementById('staff').checked){
+            $("#staffRegistration").show();
+            $("#selectRegType").hide();
+            }
+          });
+
+    });(jQuery);
+  
+  </script>
+  
+
+</body>
+</html>

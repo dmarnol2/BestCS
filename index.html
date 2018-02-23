@@ -19,6 +19,31 @@
     border: 0 none;
     box-shadow: none;
 }
+.submitLoginButton {
+      border-radius:5px;
+      width: 170px;
+      height:28px;
+      margin-left: 77px;
+      text-align: center;
+      color:black;
+      margin-bottom: 5px; 
+      margin-top: 15px;
+      background-color: #D5F5E3;
+    
+    }
+    .cancelLoginButton {
+      border-radius:5px;
+      width: 170px;
+      height:28px;
+      margin-left: 77px;
+      text-align: center;
+      color:black;
+      margin-bottom: 5px; 
+      
+      
+    
+    }
+    
 
 	</style>
 	<nav class="navbar navbar-inverse right">
@@ -78,17 +103,29 @@
         <h1>Welcome to Best Community Service</h1>
         <p>Placing access to community events and services at your fingertips.</p>
         <a href="#" class="btn btn-default" id="getStarted">Log In</a>
-        <a href="#" class="btn btn-default" id="readMore" >Register</a>
+        <a href="registration.html" class="btn btn-default" id="readMore" >Register</a>
       </div>
     </div>
   </div>
+  <div id="login"><br><br>
+  <div class="container">
+  <form>
+    <div id="userName" >User Name: <input type="text"  id="username"/>
+    </div><br>
+    <div id="password" >Password: <input style="margin-left: 7px;"  type="text" id="password"/><br>
+      <a href="#" class="btn btn-default submitLoginButton" id="sBtn" >Submit</a><br>
+      <a href="/" class="btn btn-default cancelLoginButton" id="loginCancelBtn" >Cancel</a>
+    </div>
+  </form> 
+  </div>
+</div>
 
+  <div id="sponsors"><br>
   <h3 style="text-align: center;">Please Support Our Sponsors</h3>
-  <br><br>
+  <br>
 
   <div class="container">
-  
-  <div class="row">
+    <div class="row">
     <div class="col-md-3">
       <div class="thumbnail">
         <a href="beer.png" target="_blank">
@@ -119,11 +156,32 @@
     </div>
   </div>
 </div>
+</div>
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+  <script >
+    $(document).ready(function(){
+      $("#login").hide();
+      $("#getStarted").click(function () {
+        $("#sponsors").hide();
+        $("#login").show();
+      });
+
+      $("#sBtn").click(function () {
+        $("#sponsors").show();
+        $("#login").hide();
+        $("#getStarted").hide();
+        $("#readMore").hide();
+      });
+      
+
+
+    });
+  </script>
 
 
   <!-- INCLUDE	IMAGES TO SPONSORS -->
