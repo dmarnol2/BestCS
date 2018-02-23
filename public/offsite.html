@@ -111,116 +111,14 @@ height:300px;}
       </div><!-- /.container-fluid -->
     </nav>
 
-  <div class="jTron">
-    <div class=" jumbotron " id="jumbotron-display">
-      <div class="container text-center">
-        <h1>Welcome to Best Community Service</h1>
-        <p>Placing access to community events and services at your fingertips.</p>
-        <a href="#" class="btn btn-default" id="getStarted">Log In</a>
-        <a href="registration.html" class="btn btn-default" id="readMore" >Register</a>
-      </div>
+       <div class="container">
+      <br>
+      <h3 class="center">Off-Site Services</h3>
+      <hr>
+      <br>
+      <h4>This page is linked from the navbar and welcome screen after successful login</h4>
+      <br>
+      <h4>This page will present a list of off-site services offered with a button for each listing linking to a page where user can register for that specific service.</h4>
+
+
     </div>
-  </div>
-  <div class="container" id="loginError" style="color:red;">Username and Password combo does not match any accounts.</div>
-  <div id="login"><br><br>
-  <div class="container">
-  <form>
-    <div id="userNameDiv" >User Name: <input type="text"  id="username"/>
-    </div><br>
-    <div id="passwordDiv" >Password: <input style="margin-left: 7px;"  type="text" id="password"/>
-         (authentication disabled for testing purposes)<br>
-      <a href="#" class="btn btn-default submitLoginButton" onsubmit="check()" id="sBtn" >Submit</a><br>
-      <a href="/" class="btn btn-default cancelLoginButton" id="loginCancelBtn" >Cancel</a>
-      
-    </div>
-  </form> 
-  </div>
-</div>
-<div class="container text-center" id="welcome" strong><h4><b>Welcome Back Username!</b></h4>
-      <a href="#" class="btn btn-default serviceButton" id="onSiteBtn" >View On-Site Services</a><br>
-      <a href="#" class="btn btn-default serviceButton" id="offSiteBtn" >View Off-Site Services</a><br>
-      <a href="#" class="btn btn-default serviceButton" id="homeCareBtn" >View Home-Care Services</a><br>
-      <a href="#" class="btn btn-default serviceButton" id="shuttleBtn" >Reserve Shuttle Service</a>
-    </div>
-
-  <div id="sponsors">
-    <br>
-  <h4 style="text-align: center;">Please Support Our Sponsors</h4>
-  <div class="container">
-    <div class="row">
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a href="beer.png" target="_blank">
-          <img src="beer.png" alt="Boxing Bear Brewing Co." width="100" height="100">
-          </a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a href="baskinrobbins.png" target="_blank">
-          <img src="baskinrobbins.png" alt="Baskin Robbins Ice Cream Shop" width="100" height="100">
-          </a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a href="philz.jpg" target="_blank">
-          <img src="philz.jpg" alt="Philz Coffee" width="200" height="200">
-          </a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="thumbnail">
-        <a href="hungryjacks.png" target="_blank">
-          <img src="hungryjacks.png" alt="Hungry Jacks Diner" width="100" height="100">
-          </a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-  <script >
-    
-
-
-
-    $(document).ready(function(){
-
-
-      $('#loginError').hide();
-      $("#welcome").hide();
-      $("#login").hide();
-      $("#getStarted").click(function () {
-        $("#sponsors").hide();
-        $("#login").show();
-      });
-
-      $("#sBtn").click(function () {
-        //if(document.getElementById("password").value=="password"){
-          $("#sponsors").hide();
-        $("#login").hide();
-        $("#getStarted").hide();
-        $("#readMore").hide();
-        $("#welcome").show();
-        //}
-        //else
-        //$('#loginError').show();
-        
-      });
-      
-
-
-    });
-  </script>
-
-
-  <!-- INCLUDE	IMAGES TO SPONSORS -->
-	
-</body>
-</html>
