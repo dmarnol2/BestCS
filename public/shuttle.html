@@ -8,6 +8,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 <body>
 	<style type="text/css">
@@ -95,8 +96,7 @@ height:300px;}
               <ul class="dropdown-menu">
                 <li><a href="onsite.html" >On-Site Services</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="offsite.html" >Off-Site Services</a></li>
-                <li role="separator" class="divider"></li>
+                
                 <li><a href="homecare.html" >Home Care Services</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="shuttle.html" >Shuttle Services</a></li>
@@ -111,23 +111,81 @@ height:300px;}
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
+<div class="container">
       <br>
-      <h3 class="center">Shuttle Services</h3>
-      <hr>
-      <br>
-      <h4>This page is linked from the navbar and welcome screen after successful login</h4>
-      <br>
-      <h4>This page will present a calendar of available dates and times to reserve spot on shuttle.</h4>
-      <br>
-      <h4>This page will present a form for user to sign up for services.</h4>
-      <br>
-      <h4>A link to payment site provided after user reserves shuttle.</h4>
+      <h3 style="text-align: center;">Shuttle Service</h3>
+      
+      <div class="row"><div class="col-sm-9">
+      <p>Add as many trips as you wish. Click purchase to finalize selection. One Way is $4 and Round Trip is $7.</p></div>
+      </div>
+    </div>
+    <div class="container" id="selectRegType">
+    <p>Please select:</p>
+    <div class="checkbox" id="commDiv">
+  <label><input type="checkbox" id="rt" value="" class="checkbox_check">One Way</label>
+</div>
+<div class="checkbox" id="staffDiv">
+  <label><input type="checkbox"  id="oneway" value="" class="checkbox_check">Round Trip</label>
+</div>
+</div>
+    
+    <div class="bootstrap-iso">
+ <div class=" container container-fluid">
+  <div class="row">
+   <div class="col-md-6 col-sm-6 col-xs-12">
 
+    <!-- Form code begins -->
+    <form method="post">
+      <div class="form-group"> <!-- Date input -->
+        <label class="control-label" for="date">Date:</label>
+        <input class="form-control" id="date" name="date" placeholder="Enter date or click to select" type="text"/><br>
+        <label class="control-label" for="date">Time:</label>
+        <input class="form-control" id="date" name="date" placeholder="Use format 00:00" type="text"/>
+         <div class="container" id="selectRegType">
+          
+    
+    <div class=" container checkbox" >Please select:
+    <label ><input type="checkbox" id="am" value="" class="checkbox_check">AM</label>
+    <label style="margin-left: 10px;"><input type="checkbox"  id="pm" value="" class="checkbox_check" >PM</label>
+    </div>
+  </div>
+
+        <label class="control-label" for="date">Destination:</label>
+        <input class="form-control" id="date" name="date" placeholder="Type in your destination" type="text"/>
+      </div>
+      <div class="form-group"> <!-- Submit button -->
+        <button class="btn btn-primary " name="submit" type="submit">Add to Itenerary</button>
+        <button class="btn btn-primary " name="submit"  type="submit" style="width: 125px;">Purchase</button>
+      </div>
+     </form>
+     <!-- Form code ends --> 
 
     </div>
+  </div>    
+ </div>
+</div>
+<div class="bfh-timepicker" data-mode="12h">
+</div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
   
 </body>
 </html>
