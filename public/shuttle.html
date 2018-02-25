@@ -3,12 +3,14 @@
 <head>
 	  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Best Community Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Best Community Service</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 </head>
 <body>
 	<style type="text/css">
@@ -113,6 +115,11 @@ height:300px;}
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    
+<body>
+
+
+
 
 <div class="container">
       <br>
@@ -157,24 +164,66 @@ height:300px;}
         <input class="form-control" id="date" name="date" placeholder="Type in your destination" type="text"/>
       </div>
       <div class="form-group"> <!-- Submit button -->
-        <button class="btn btn-primary " name="submit" type="submit">Add to Itenerary</button>
-        <button class="btn btn-primary " name="submit"  type="submit" style="width: 125px;">Purchase</button>
-        <a href="/" class="btn btn-primary " name="submit"  type="submit" style="width: 125px;">Cancel</a>
+        
       </div>
      </form>
-     <!-- Form code ends --> 
-
+     <!-- Form code ends -->
+     <button class="btn btn-primary " name="submit" type="submit">Add to Itenerary</button>
+        <button class="btn btn-primary " name="submit" type="submit" data-toggle="modal" data-target="#itenModal" style="width: 125px;margin-left: 14px;">View Itenerary</button>
+        
+        <a href="/" class="btn btn-primary " name="submit"  type="submit" style="width: 125px;background-color: red;margin-left: 14px;">Cancel</a>
+    <button class="btn btn-primary " name="submit"  type="submit" data-toggle="modal" data-target="#purchaseModal" style="width: 125px;background-color: green;margin-left: 14px;">Purchase</button>
     </div>
   </div>    
  </div>
 </div>
-<div class="bfh-timepicker" data-mode="12h">
+
+
+<!-- Purchse Confirm Modal -->
+<div class="modal fade" id="purchaseModal" tabindex="-1" role="dialog" aria-labelledby="puchase modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="purchaseModal">Purchase Confirmation</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Thank you for entrusting us with your transportation needs. You will receive an email confirmation soon with details of your purchase. Click continue shopping to purchase more shuttle passes or return to the home screen.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 140px;">Continue Shopping</button>
+        <a href="/" type="button" class="btn btn-primary" style="width: 140px;">Return Home</a>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<!-- View Itenerary Modal -->
+<div class="modal fade" id="itenModal" tabindex="-1" role="dialog" aria-labelledby="itenModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="itenModal">Shuttle Itenerary</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Your shuttle reservations:<br>
+        Trip 1:<br>
+        Trip 2:<br>
+        Trip 3:<br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 140px;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
 
 
 <script>
