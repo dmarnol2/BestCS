@@ -1,3 +1,12 @@
+<!-- 
+Author: David Arnold
+Date: Feb 26 2018
+Project for ASU SER416
+
+Mobile first webapp utilizing Bootstrap. This page prompts user to 
+enter information for registration purposes.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +15,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BestCS Registration</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
 <body>
   <style>
-  .box{
+.box{
       margin-top: 10px;}
-  .navbar{
+.navbar{
       margin-bottom:0;
       border-radius:0;
     }
 
-  .submitButton {
+.submitButton {
       border-radius:10px;
       display:block;
       width: 140px;
@@ -30,7 +39,7 @@
       height:28px;
       
       }
-    .cancelButton {
+.cancelButton {
       border-radius:10px;
       display:block;
       width: 100px;
@@ -40,7 +49,7 @@
       margin-left: 5px;
       }
   
-  .regCancelButton {
+.regCancelButton {
       border-radius:5px;
       margin-left: 10px;
       width: 120px;
@@ -51,7 +60,7 @@
       height:28px;
 
     }
-  .regSubmitButton {
+.regSubmitButton {
       border-radius:5px;
       width: 140px;
       margin-left: 30px;
@@ -64,9 +73,10 @@
 
     }
 .jumbotron {
-background-image: url("/splash1a.jpg");
-background-size: cover;
-height:300px;}
+      background-image: url("/splash1a.jpg");
+      background-size: cover;
+      height:300px;
+    }
 
 </style>
 
@@ -148,16 +158,16 @@ height:300px;}
   
   <div class="container" id="publicRegistration">
     <p class="container" style="color:blue;">Public Registration</p>
-    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+    <form method="post" name="userInfo">
       <div id="credentials" class="col-md-12">
-        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
-        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
-        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
-        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
-        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
-        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
-        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
-        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" /><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;"/><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" /><br><br>
+        User Name:   <input type="text"  id="uName" style="margin-left: 8px;" /><br><br>
+        Password:   <input id="regPassword" type="password" style="margin-left: 15px;"  />
+        <input type="checkbox" name="option" value='1'  /> View password<br>
+        Confirm:   <input type="password" id="confirmPass" style="margin-left: 29px;"  />
+        <input type="checkbox" name="option2" value='1'  /> View password
         <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
         <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
         <!--<button id="registrationBtn" class="btn-default">Submit</button>-->
@@ -170,16 +180,16 @@ height:300px;}
  
   <div class="container" id="volRegistration">
     <p class="container" style="color:blue;">Volunteer Registration</p>
-    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+    <form method="post" name="userInfo" >
       <div id="credentials" class="col-md-12">
-        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
-        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
-        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
-        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
-        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
-        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
-        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
-        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" /><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" /><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" /><br><br>
+        User Name:   <input type="text" id="uName" style="margin-left: 8px;"  /><br><br>
+        Password:   <input id="regPassword" type="password" style="margin-left: 15px;"  />
+        <input type="checkbox" name="option"  onchange="changeType()" /> View password<br>
+        Confirm:   <input type="password"  id="confirmPass" style="margin-left: 29px;" />
+        <input type="checkbox" name="option2"  /> View password
         <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
         <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
         <!--<button id="registrationBtn" class="btn-default">Submit</button>-->
@@ -191,16 +201,16 @@ height:300px;}
   
   <div class="container" id="staffRegistration">
     <p class="container" style="color:blue;">Employee Registration</p>
-    <form method="post" name="userInfo" onsubmit="return ValidateEmail()">
+    <form method="post" name="userInfo" >
       <div id="credentials" class="col-md-12">
-        First Name:   <input type="text" id="firstName" style="margin-left: 10px;" required/><br><br>
-        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" required/><br><br>
-        Email:   <input type="text" id="email"  style="margin-left: 43px;" required/><br><br>
-        User Name:   <input type="text" style="margin-left: 8px;" id="registerUN" required/><br><br>
-        Password:   <input id="regPassword" style="margin-left: 15px;" type="password" required/>
-        <input type="checkbox" name="option" value='1' onchange="changeType()" /> View password<br>
-        Confirm:   <input type="password" style="margin-left: 29px;" id="confirmPass" oninput="check()" required/>
-        <input type="checkbox" name="option2" value='1' onchange="changeType2()" /> View password
+        First Name:   <input type="text" id="firstName" style="margin-left: 10px;"/><br><br>
+        Last Name:   <input type="text" id="lastName" style="margin-left: 10px;" /><br><br>
+        Email:   <input type="text" id="email"  style="margin-left: 43px;" /><br><br>
+        User Name:   <input type="text" id="uName" style="margin-left: 8px;"  /><br><br>
+        Password:   <input id="regPassword"  type="password" style="margin-left: 15px;" />
+        <input type="checkbox" name="option"  /> View password<br>
+        Confirm:   <input type="password" id="confirmPass"  style="margin-left: 29px;" />
+        <input type="checkbox" name="option2"  /> View password
         <button href="#" class="btn btn-default regSubmitButton" id="registrationBtn" style="margin-bottom: 9px" >Submit</button>
         <a href="/" class="btn btn-default regCancelButton" id="regCancelBtn" style="margin-bottom: 9px">Cancel</a>
         <!--<button id="registrationBtn" class="btn-default">Submit</button>-->

@@ -1,30 +1,40 @@
+<!-- 
+Author: David Arnold
+Date: Feb 26 2018
+Project for ASU SER416
+
+Mobile first webapp utilizing Bootstrap. This page allows user to 
+schedule shuttle service, view itenerary, and proceed to purchase. 
+Utilizes Bootstrap Datepicker that shows calendar when date field 
+is selected.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	  <meta charset="UTF-8">
+	<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Best Community Service</title>
     <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  
 </head>
 <body>
-	<style type="text/css">
-  p {
+<style type="text/css">
+
+p {
     font-size: 16px;
-} 
-		.navbar{
+    } 
+.navbar{
       margin-bottom:0;
       border-radius:0;
     }
-    .thumbnail {
+.thumbnail {
     border: 0 none;
     box-shadow: none;
-}
+    }
 .submitLoginButton {
       border-radius:5px;
       width: 170px;
@@ -37,7 +47,7 @@
       background-color: #D5F5E3;
     
     }
-    .cancelLoginButton {
+.cancelLoginButton {
       border-radius:5px;
       width: 170px;
       height:28px;
@@ -45,8 +55,8 @@
       text-align: center;
       color:black;
       margin-bottom: 5px; 
-     }
-     .serviceButton {
+    }
+.serviceButton {
       border-radius:5px;
       width: 200px;
       height:28px;
@@ -54,13 +64,14 @@
       text-align: center;
       color:black;
       margin-top: 10px; 
-     }
+    }
 
 
 .jumbotron {
-background-image: url("/splash1a.jpg");
-background-size: cover;
-height:300px;}
+      background-image: url("/splash1a.jpg");
+      background-size: cover;
+      height:300px;
+    }
     
 
 	</style>
@@ -144,7 +155,7 @@ height:300px;}
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
 
-    <!-- Form code begins -->
+    <!-- DATEPICKER provided for by Bootstrap customized by author -->
     <form method="post">
       <div class="form-group"> <!-- Date input -->
         <label class="control-label" for="date">Date:</label>
@@ -223,9 +234,12 @@ height:300px;}
     </div>
   </div>
 </div>
-  
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
+<!-- DATEPICKER script provided for by Bootstrap -->
 <script>
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
